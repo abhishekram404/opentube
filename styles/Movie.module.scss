@@ -1,0 +1,86 @@
+.movie_page {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  .background {
+    z-index: -1;
+    min-height: 100vh;
+    .background_image {
+    }
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    .intro {
+      display: grid;
+      grid-template-columns: 25% 1fr;
+      gap: 50px;
+      .thumbnail_container {
+        border: 3px solid white;
+        border-radius: 10px;
+        // padding: 5px ;
+        overflow: hidden;
+      }
+      .intro_content {
+        font-family: "Lato", sans-serif;
+        h1 {
+          font-family: "Poppins", sans-serif;
+          margin-bottom: 20px;
+          > span {
+            opacity: 0.6;
+          }
+        }
+        .description {
+          font-size: 1.2rem;
+          font-family: "Lato", sans-serif;
+          line-height: 2rem;
+          width: calc(40% + 200px);
+          margin-bottom: 30px;
+        }
+        .genres {
+          margin-bottom: 10px;
+
+          small {
+            background-color: rgba($color: #fff, $alpha: 0.4);
+            margin-right: 5px;
+            color: white;
+            padding: 5px;
+            font-size: 0.7rem;
+            border-radius: 5px;
+          }
+        }
+        .rating {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .info {
+          display: flex;
+          margin-bottom: 20px;
+
+          > span {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            width: fit-content;
+            padding: 5px;
+            border-radius: 5px;
+            > svg {
+              margin-right: 5px;
+            }
+          }
+          .download_count {
+            background-color: #258b25;
+          }
+        }
+      }
+    }
+  }
+}
