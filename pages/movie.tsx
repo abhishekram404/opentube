@@ -90,17 +90,24 @@ const Movie = ({ movie }: { [key: string]: any }) => {
               <div className={styles.torrents_section}>
                 <h2>Torrents</h2>
                 <div className={styles.torrents_list}>
-                  {movie.torrents.map((torrent) => (
-                    <div className={styles.torrent}>
-                      <span>{torrent.quality}</span> |
-                      <span>{torrent.size}</span> |<span>{torrent.type}</span> |
-                      <Link href={torrent.url} passHref>
-                        <a className={styles.link}>
-                          <HiOutlineLink /> Torrent link
-                        </a>
-                      </Link>
-                    </div>
-                  ))}
+                  {movie.torrents.map(
+                    (torrent: {
+                      quality: string;
+                      size: string;
+                      url: string;
+                    }) => (
+                      <div className={styles.torrent}>
+                        <span>{torrent.quality}</span> |
+                        <span>{torrent.size}</span> |<span>{torrent.type}</span>{" "}
+                        |
+                        <Link href={torrent.url} passHref>
+                          <a className={styles.link}>
+                            <HiOutlineLink /> Torrent link
+                          </a>
+                        </Link>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
               <div>
