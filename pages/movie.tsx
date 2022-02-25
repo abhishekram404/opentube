@@ -6,7 +6,10 @@ import styles from "../styles/Movie.module.scss";
 import { RatingStar } from "rating-star";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { AiOutlineClockCircle, AiOutlineLike } from "react-icons/ai";
+import { HiOutlineLink } from "react-icons/hi";
 import moment from "moment";
+import { spawn } from "child_process";
+import Link from "next/link";
 const Movie = ({ movie }: { [key: string]: any }) => {
   console.log(movie);
 
@@ -77,6 +80,40 @@ const Movie = ({ movie }: { [key: string]: any }) => {
                 <p>
                   Uploaded on {moment(movie.date_uploaded).format("DD/MM/YYYY")}
                 </p>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className={styles.resources}>
+              <div className={styles.torrents_section}>
+                <h2>Torrents</h2>
+                <div className={styles.torrents_list}>
+                  {movie.torrents.map((torrent) => (
+                    <div className={styles.torrent}>
+                      <span>{torrent.quality}</span> |
+                      <span>{torrent.size}</span> |<span>{torrent.type}</span> |
+                      <Link href={torrent.url} passHref>
+                        <a className={styles.link}>
+                          <HiOutlineLink /> Torrent link
+                        </a>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h2>Trailer</h2>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube-nocookie.com/embed/${movie.yt_trailer_code}`}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>

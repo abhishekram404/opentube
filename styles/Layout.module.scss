@@ -5,5 +5,10 @@
   .body {
     padding: 30px 50px;
     color: $white;
+    overflow: scroll;
+    // height: 150%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

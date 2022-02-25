@@ -1,8 +1,12 @@
 .movie_page {
   position: relative;
   padding: 0;
-  overflow: hidden;
   border-radius: 10px;
+  // height: 100%;
+  ::-webkit-scrollbar {
+    display: none;
+    visibility: hidden;
+  }
   .background {
     z-index: -1;
     min-height: 100vh;
@@ -15,7 +19,7 @@
     z-index: 100;
     background-color: rgba($color: #000000, $alpha: 0.8);
     width: 100%;
-    height: 100%;
+    // height: 100%;
     padding: 30px;
     .intro {
       display: grid;
@@ -78,6 +82,32 @@
           }
           .download_count {
             background-color: #258b25;
+          }
+        }
+      }
+    }
+    .resources {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      .torrents_section {
+        > h2 {
+          margin-bottom: 20px;
+        }
+        .torrents_list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .torrent {
+            background-color: rgba($color: #fff, $alpha: 0.3);
+            width: fit-content;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .link {
+              color: rgb(35, 211, 35);
+            }
           }
         }
       }

@@ -1,4 +1,8 @@
+@import "./variables.scss";
+
 .container {
+  background-color: $dark;
+  min-height: 100vh;
   .moviesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
