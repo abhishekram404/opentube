@@ -95,6 +95,7 @@ const Movie = ({ movie }: { [key: string]: any }) => {
                       quality: string;
                       size: string;
                       url: string;
+                      type: string;
                     }) => (
                       <div className={styles.torrent}>
                         <span>{torrent.quality}</span> |
